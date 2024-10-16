@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Load the dataset (adjust the path if necessary)
+data = pd.read_csv('customer_data.csv')
+
+# View the first few rows of the dataset
+print(data.head())
+
+# Get an overview of the dataset
+print(data.info())
+print(data.describe())
