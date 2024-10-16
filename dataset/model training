@@ -1,0 +1,19 @@
+# Make predictions on the test set
+y_pred_log_reg = log_reg.predict(X_test)
+y_pred_rf = rf_clf.predict(X_test)
+y_pred_gb = gb_clf.predict(X_test)
+
+# Evaluate performance
+print("Logistic Regression Accuracy:", accuracy_score(y_test, y_pred_log_reg))
+print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
+print("Gradient Boosting Accuracy:", accuracy_score(y_test, y_pred_gb))
+
+# Classification report and confusion matrix for each model
+print("Logistic Regression Report:\n", classification_report(y_test, y_pred_log_reg))
+print("Random Forest Report:\n", classification_report(y_test, y_pred_rf))
+print("Gradient Boosting Report:\n", classification_report(y_test, y_pred_gb))
+
+# Confusion Matrix
+print("Confusion Matrix for Logistic Regression:\n", confusion_matrix(y_test, y_pred_log_reg))
+print("Confusion Matrix for Random Forest:\n", confusion_matrix(y_test, y_pred_rf))
+print("Confusion Matrix for Gradient Boosting:\n", confusion_matrix(y_test, y_pred_gb))
